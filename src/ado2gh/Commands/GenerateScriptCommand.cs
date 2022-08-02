@@ -468,7 +468,7 @@ if ($Failed -ne 0) {
 
         private string AddMaintainersToGithubRepoScript(string adoTeamProject, string githubOrg, string githubRepo) =>
             _generateScriptOptions.CreateTeams
-                ? $"./ado2gh add-team-to-repo --github-org \"{githubOrg}\" --github-repo \"{githubRepo}\" --team \"{adoTeamProject.ReplaceInvalidCharactersWithDash().ToLower()}-developers\" --role \"developers\"{(_log.Verbose ? " --verbose" : string.Empty)}"
+                ? $"./ado2gh add-team-to-repo --github-org \"{githubOrg}\" --github-repo \"{githubRepo}\" --team \"{adoTeamProject.ReplaceInvalidCharactersWithDash().ToLower()}-developers\" --role \"Developers\"{(_log.Verbose ? " --verbose" : string.Empty)}"
                 : null;
 
         private string AddAdminsToGithubRepoScript(string adoTeamProject, string githubOrg, string githubRepo) =>
