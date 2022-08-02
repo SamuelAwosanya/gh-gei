@@ -34,7 +34,7 @@ namespace OctoshiftCLI.AdoToGithub.Commands
             var role = new Option<string>("--role")
             {
                 IsRequired = true,
-                Description = "The only valid values are: pull, push, admin, maintain, triage. For more details see https://docs.github.com/en/rest/reference/teams#add-or-update-team-repository-permissions, custom repository roles are not currently supported."
+                Description = "The only valid values are: pull, push, admin, maintain, triage, developers. For more details see https://docs.github.com/en/rest/reference/teams#add-or-update-team-repository-permissions, custom repository roles are not currently supported."
             };
             var githubPat = new Option<string>("--github-pat")
             {
@@ -48,7 +48,7 @@ namespace OctoshiftCLI.AdoToGithub.Commands
             AddOption(githubOrg);
             AddOption(githubRepo);
             AddOption(team);
-            AddOption(role.FromAmong("pull", "push", "admin", "maintain", "triage"));
+            AddOption(role.FromAmong("pull", "push", "admin", "maintain", "triage", "developers"));
             AddOption(githubPat);
             AddOption(verbose);
 
