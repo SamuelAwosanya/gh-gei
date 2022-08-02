@@ -463,12 +463,12 @@ if ($Failed -ne 0) {
 
         private string CreateGithubMaintainersTeamScript(string adoTeamProject, string githubOrg, bool linkIdpGroups) =>
             _generateScriptOptions.CreateTeams
-                ? $"./ado2gh create-team --github-org \"{githubOrg}\" --team-name \"{adoTeamProject.ReplaceInvalidCharactersWithDash().ToLower()}-Maintainers\"{(_log.Verbose ? " --verbose" : string.Empty)}{(linkIdpGroups ? $" --idp-group \"{adoTeamProject.ReplaceInvalidCharactersWithDash()}-Maintainers\"" : string.Empty)}"
+                ? $"./ado2gh create-team --github-org \"{githubOrg}\" --team-name \"{adoTeamProject.ReplaceInvalidCharactersWithDash().ToLower()}-developers\"{(_log.Verbose ? " --verbose" : string.Empty)}{(linkIdpGroups ? $" --idp-group \"{adoTeamProject.ReplaceInvalidCharactersWithDash()}-developers\"" : string.Empty)}"
                 : null;
 
         private string AddMaintainersToGithubRepoScript(string adoTeamProject, string githubOrg, string githubRepo) =>
             _generateScriptOptions.CreateTeams
-                ? $"./ado2gh add-team-to-repo --github-org \"{githubOrg}\" --github-repo \"{githubRepo}\" --team \"{adoTeamProject.ReplaceInvalidCharactersWithDash().ToLower()}-Maintainers\" --role \"maintain\"{(_log.Verbose ? " --verbose" : string.Empty)}"
+                ? $"./ado2gh add-team-to-repo --github-org \"{githubOrg}\" --github-repo \"{githubRepo}\" --team \"{adoTeamProject.ReplaceInvalidCharactersWithDash().ToLower()}-developers\" --role \"maintain\"{(_log.Verbose ? " --verbose" : string.Empty)}"
                 : null;
 
         private string AddAdminsToGithubRepoScript(string adoTeamProject, string githubOrg, string githubRepo) =>
