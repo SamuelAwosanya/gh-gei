@@ -144,8 +144,8 @@ namespace OctoshiftCLI.AdoToGithub.Commands
 
             _generateScriptOptions = new GenerateScriptOptions
             {
-                CreateTeams = args.All || args.CreateTeams || args.LinkIdpGroups,
-                LinkIdpGroups = args.All || args.LinkIdpGroups,
+                CreateTeams = args.All || args.CreateTeams,
+                LinkIdpGroups = false,
                 LockAdoRepos = args.All || args.LockAdoRepos,
                 DisableAdoRepos = args.All || args.DisableAdoRepos,
                 IntegrateBoards = args.All || args.IntegrateBoards,
